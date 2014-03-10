@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  form(action="/", method="POST")
+    textarea#sometext(name="sometext", cols="70", rows="20")
+    input(type="submit", value="Do It")
+  h3 Entries  	
+
+  -each entry in entries
+    !{entry.textField}
+
