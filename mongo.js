@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-// var mongouri = 'mongodb://localhost/express-loit';
+var mongouri = 'mongodb://localhost/express-loit';
 var db = mongoose.connect(mongouri, { server: { auto_reconnect: true } }, function (err, db) {
     if(err) {
     	throw err;
