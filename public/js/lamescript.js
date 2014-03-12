@@ -9,13 +9,13 @@ $(function(){
     
 	    var Code = document.getElementById('comment').value;
 
-	    if( /[^a-zA-Z0-9\-\/]/.test( TCode ) ) {
+	    if( /[^a-zA-Z0-9\-\/]/.test( Code ) ) {
 	        alert('Input is not alphanumeric');
 		}
 	
 	    var NCode = document.getElementById('name').value;
 
-	    if( /[^a-zA-Z0-9\-\/]/.test( TCode ) ) {
+	    if( /[^a-zA-Z0-9\-\/]/.test( NCode ) ) {
 	        alert('Input is not alphanumeric');
 	
 		}
