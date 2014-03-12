@@ -8,7 +8,9 @@ var db = mongoose.connect(mongouri, { server: { auto_reconnect: true } }, functi
 }); 
 
 var textEntryItem = new mongoose.Schema({
-	textField: {type: String}
+	comment: {type: String},
+  name: {type: String},
+  email: {type: String}
 });
 TextEntry = mongoose.model('TextEntry', textEntryItem);
 
@@ -19,9 +21,12 @@ function MongoConnector(){
   }
 };
 
-MongoConnector.prototype.addText = function(data){
+MongoConnector.prototype.addDoc = function(data_obj){
+  console.log(data_obj);
 		var item = new TextEntry();
-		item.textField = data;
+		item.comment = data_obj.comment;
+    item.name = data_obj.name;
+    item.email = data_obj.email;
 		item.save(function(err, item){
 			if(err) return console.error("OOPS!");
 		});

@@ -1,13 +1,25 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1 Express-Loit
+  p Welcome to my rad blog
+  p Sign My Guest Book!
+  hr
   form(action="/", method="POST")
-    textarea#sometext(name="sometext", cols="70", rows="20")
-    input(type="submit", value="Do It")
+    p
+      label(for="name") Name *
+      input#name(type="text", name="name")
+    p
+      label(for="email") Email *
+      input#email(type="email", name="email")
+
+    textarea#comment(name="comment", cols="70", rows="20")
+    p
+      input#submit(type="submit", value="Submit Comment")
   h3 Entries  	
 
   -each entry in entries
-    !{entry.textField}
+    div.entry
+      b !{entry.name}
+      p !{entry.comment}
 

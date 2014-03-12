@@ -38,7 +38,12 @@ app.get('/', function(req, res){
 });
 app.post('/', function(req, res){
   var mongoose = new MongoConnector();
-  mongoose.addText(req.body.sometext);
+  mongoose.addDoc(
+    {
+      comment : req.body.comment,
+      name : req.body.name,
+      email : req.body.email
+    });
   res.redirect("/");
 })
 //app.get('/users', user.list);
